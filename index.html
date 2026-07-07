@@ -3,35 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MoWorld 实时交互世界模型</title>
+    <title>MoWorld 高帧率实时交互世界模型</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="site-shell">
       <header class="topbar" aria-label="MoWorld navigation">
-        <a class="brand" href="#top" aria-label="MoWorld home">
+        <a class="brand" href="https://kokoniworld.hk" target="_blank" rel="noreferrer" aria-label="Kokoni World">
           <span class="brand-mark">M</span>
           <span>MoWorld</span>
         </a>
         <nav class="nav-list" aria-label="Page sections">
-          <a href="#模型简介" data-i18n="nav.overview">模型简介</a>
-          <a href="#能力展示" data-i18n="nav.capabilities">能力展示</a>
           <a href="#技术架构" data-i18n="nav.technology">技术架构</a>
+          <a href="#结果展示" data-i18n="nav.results">结果展示</a>
           <a href="#应用场景" data-i18n="nav.applications">应用场景</a>
         </nav>
       </header>
 
       <section class="hero-section" id="top">
         <p class="eyebrow">Cost-Efficient NPU Stack</p>
-        <h1 data-i18n="hero.title">MoWorld 实时交互世界模型</h1>
+        <h1 data-i18n="hero.title">MoWorld 高帧率实时交互世界模型</h1>
         <p class="hero-copy" data-i18n="hero.copy">
-          首个自主可控（纯国产）的实时交互世界模型，从训练、推理到部署全流程基于国产化平台构建，面向昇腾生态实现高帧率、低成本、可连续控制的视频世界生成。
+          首个面向NPU的实时交互世界模型，从训练、推理到部署全流程基于国产化平台构建，实现高帧率、低成本、可连续控制的视频世界生成。
         </p>
         <div class="action-row" aria-label="External links placeholders">
-          <button type="button" disabled data-i18n="hero.github">GitHub 待补</button>
-          <button type="button" disabled data-i18n="hero.paper">Paper 待补</button>
-          <button type="button" disabled data-i18n="hero.demo">Demo 待补</button>
-          <button type="button" disabled class="primary-action" data-i18n="hero.cta">立即体验 待补</button>
+          <button type="button" disabled data-i18n="hero.github">代码(Coming Soon)</button>
+          <a class="action-link" href="MoWorld.pdf" target="_blank" rel="noreferrer" data-i18n="hero.paper">报告</a>
+          <button type="button" disabled class="primary-action" data-i18n="hero.cta">立即体验(Coming Soon)</button>
           <div class="language-switch" id="languageSwitch">
             <button
               type="button"
@@ -41,7 +39,7 @@
               aria-expanded="false"
             >
               <span data-current-language>中文</span>
-              <span class="language-chevron">⌃</span>
+              <span class="language-chevron">▾</span>
             </button>
             <div class="language-menu" role="listbox" aria-label="Language">
               <button type="button" class="language-option" data-language-option="zh" aria-selected="true">
@@ -56,120 +54,18 @@
           </div>
         </div>
         <div class="hero-media">
-          <img src="moworld/figure-1-overview.png" alt="MoWorld overview collage" />
-        </div>
-      </section>
-
-      <section class="metric-grid" aria-label="Key metrics">
-        <article class="metric-card"><strong>20-25 FPS</strong><span data-i18n="metrics.fps">并行优化后实时推理速度</span></article>
-        <article class="metric-card"><strong>1s</strong><span data-i18n="metrics.latency">按键响应约 1 秒</span></article>
-        <article class="metric-card"><strong>20%-33%</strong><span data-i18n="metrics.cost">同等模型尺寸下的 GPU 推理成本占比</span></article>
-        <article class="metric-card"><strong>2 min</strong><span data-i18n="metrics.duration">连续推理基本稳定</span></article>
-      </section>
-
-      <section class="content-section" id="模型简介">
-        <div class="section-heading">
-          <p class="eyebrow">Model Overview</p>
-          <h2 data-i18n="overview.title">模型简介</h2>
-          <p data-i18n="overview.copy">
-            MoWorld 面向实时交互式视频世界模型构建，在同等 14B-MoE 模型尺寸下，通过 Ascend NPU 服务栈和并行推理优化，把推理成本降至 GPU 方案的约 20%-33%，同时把生成速度提升到 20-25 FPS。
-          </p>
-        </div>
-        <div class="summary-grid">
-          <article class="soft-card"><h3 data-i18n="overview.card1Title">自主可控</h3><p data-i18n="overview.card1Copy">训练、推理、部署全流程基于国产化平台，面向昇腾生态构建实时交互世界模型服务能力。</p></article>
-          <article class="soft-card"><h3 data-i18n="overview.card2Title">实时交互</h3><p data-i18n="overview.card2Copy">从 4-5 FPS 优化至 20-25 FPS，支持连续相机控制和低延迟交互反馈。</p></article>
-          <article class="soft-card"><h3 data-i18n="overview.card3Title">成本可控</h3><p data-i18n="overview.card3Copy">单机 910C 价格约为单机 H100、H20、A100 的 1/2 至 2/3，14B-MoE 推理成本显著降低。</p></article>
-          <article class="soft-card"><h3 data-i18n="overview.card4Title">部署友好</h3><p data-i18n="overview.card4Copy">围绕 Ascend 910C、CANN、PyTorch NPU、HCCL/HCCS 与 NPU 原生算子形成服务栈。</p></article>
-        </div>
-      </section>
-
-      <section class="content-section" id="能力展示">
-        <div class="section-heading">
-          <p class="eyebrow">Video Demo</p>
-          <h2 data-i18n="capabilities.title">能力展示</h2>
-          <p data-i18n="capabilities.copy">以下视频按亮点展示 MoWorld 在实时交互、空间稳定、镜头控制和多样化场景上的能力。</p>
-        </div>
-        <div class="feature-stack">
-          <article class="ability-block">
-            <div class="ability-copy"><h3 data-i18n="ability.1.title">亮点一：实时响应</h3><p data-i18n="ability.1.copy">按键响应仅为 1s 左右，且支持 2 分钟推理基本稳定。</p></div>
-            <div class="ability-media has-video single-video">
-              <div class="media-topline"><div><span class="media-mark">M</span><strong>MoWorld · 实时交互世界模型</strong></div><span data-i18n="ability.1.tag">交互延迟</span></div>
-              <div class="media-video-grid"><video autoplay loop muted playsinline preload="metadata" src="moworld/videos/实时响应.mp4"></video></div>
-              <div class="media-cta" data-i18n="ability.1.tag">交互延迟</div>
-            </div>
-          </article>
-
-          <article class="ability-block">
-            <div class="ability-copy"><h3 data-i18n="ability.2.title">亮点二：支持大场景</h3><p data-i18n="ability.2.copy">广阔外景生成稳定，广视角探索时空间结构不崩塌。</p></div>
-            <div class="ability-media has-video multi-video">
-              <div class="media-topline"><div><span class="media-mark">M</span><strong>MoWorld · 实时交互世界模型</strong></div><span data-i18n="ability.2.tag">空间稳定</span></div>
-              <div class="media-video-grid">
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/支持大场景.mp4"></video>
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/支持大场景1.mp4"></video>
-              </div>
-              <div class="media-cta" data-i18n="ability.2.tag">空间稳定</div>
-            </div>
-          </article>
-
-          <article class="ability-block">
-            <div class="ability-copy"><h3 data-i18n="ability.3.title">亮点三：一致性高</h3><p data-i18n="ability.3.copy">视角连续，镜头切换自然，适合导演级镜头调度。</p></div>
-            <div class="ability-media has-video multi-video">
-              <div class="media-topline"><div><span class="media-mark">M</span><strong>MoWorld · 实时交互世界模型</strong></div><span data-i18n="ability.3.tag">视角连续</span></div>
-              <div class="media-video-grid">
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/一致性高.mp4"></video>
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/一致性高1.mp4"></video>
-              </div>
-              <div class="media-cta" data-i18n="ability.3.tag">视角连续</div>
-            </div>
-          </article>
-
-          <article class="ability-block">
-            <div class="ability-copy"><h3 data-i18n="ability.4.title">亮点四：高清真实</h3><p data-i18n="ability.4.copy">场景真实、高清，支持 1080P 或更高分辨率输出，具备影视级镜头效果。</p></div>
-            <div class="ability-media has-video multi-video">
-              <div class="media-topline"><div><span class="media-mark">M</span><strong>MoWorld · 实时交互世界模型</strong></div><span data-i18n="ability.4.tag">1080P+</span></div>
-              <div class="media-video-grid">
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/影视级镜头效果.mp4"></video>
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/影视级镜头效果1.mp4"></video>
-              </div>
-              <div class="media-cta" data-i18n="ability.4.tag">1080P+</div>
-            </div>
-          </article>
-
-          <article class="ability-block">
-            <div class="ability-copy"><h3 data-i18n="ability.5.title">亮点五：风格多样</h3><p data-i18n="ability.5.copy">自然场景、二次元、游戏场景等类型均已完成支持。</p></div>
-            <div class="ability-media has-video multi-video">
-              <div class="media-topline"><div><span class="media-mark">M</span><strong>MoWorld · 实时交互世界模型</strong></div><span data-i18n="ability.5.tag">多风格</span></div>
-              <div class="media-video-grid">
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/多样性.mp4"></video>
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/多样性1.mp4"></video>
-              </div>
-              <div class="media-cta" data-i18n="ability.5.tag">多风格</div>
-            </div>
-          </article>
-
-          <article class="ability-block">
-            <div class="ability-copy"><h3 data-i18n="ability.6.title">亮点六：人物稳定</h3><p data-i18n="ability.6.copy">人物不飘移，建模稳定，人物细节保持更精细。</p></div>
-            <div class="ability-media has-video multi-video">
-              <div class="media-topline"><div><span class="media-mark">M</span><strong>MoWorld · 实时交互世界模型</strong></div><span data-i18n="ability.6.tag">人物建模</span></div>
-              <div class="media-video-grid">
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/人物精细.mp4"></video>
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/人物精细1.mp4"></video>
-              </div>
-              <div class="media-cta" data-i18n="ability.6.tag">人物建模</div>
-            </div>
-          </article>
-
-          <article class="ability-block">
-            <div class="ability-copy"><h3 data-i18n="ability.7.title">亮点七：镜头控制丝滑</h3><p data-i18n="ability.7.copy">接近云游戏体验，支持导演级镜头与 3D 级别环绕控制。</p></div>
-            <div class="ability-media has-video multi-video">
-              <div class="media-topline"><div><span class="media-mark">M</span><strong>MoWorld · 实时交互世界模型</strong></div><span data-i18n="ability.7.tag">相机控制</span></div>
-              <div class="media-video-grid">
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/镜头控制丝滑.mp4"></video>
-                <video autoplay loop muted playsinline preload="metadata" src="moworld/videos/镜头控制丝滑1.mp4"></video>
-              </div>
-              <div class="media-cta" data-i18n="ability.7.tag">相机控制</div>
-            </div>
-          </article>
+          <div class="promo-video-frame">
+            <video
+              data-click-video
+              src="moworld/videos/宣传视频.mp4"
+              preload="auto"
+              playsinline
+              aria-label="MoWorld 宣传视频"
+            ></video>
+            <button type="button" class="promo-play-button" data-promo-play aria-label="播放宣传视频">
+              <span aria-hidden="true">▶</span>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -177,44 +73,72 @@
         <div class="section-heading">
           <p class="eyebrow">Data Engine</p>
           <h2 data-i18n="tech.dataTitle">数据引擎</h2>
-          <p data-i18n="tech.dataCopy">多源视频经过数据采集、几何补全与数据质检、视觉语言模型标注和预计算缓存，形成训练就绪样本。</p>
+          <p data-i18n="tech.dataCopy">MoWorld 的训练数据覆盖真实世界（室内、驾驶等）与虚拟世界（游戏、动漫、科幻电影等）多种场景，兼顾丰富性与泛化能力。同时，通过 3D 几何一致性、轨迹精度、多视图稳定性等多维质量筛选，以及几何补全、动态区域过滤和轨迹验证等关键流程，从海量数据中筛选出高质量训练资产，为 MoWorld 的低成本、高性能训练提供了坚实的数据基础。</p>
         </div>
         <figure class="wide-figure architecture-figure"><img src="moworld/architecture-data-engine.png" alt="数据引擎" /></figure>
-      </section>
-
-      <section class="content-section architecture-section" id="预训练蒸馏">
-        <div class="section-heading">
-          <p class="eyebrow">Training</p>
-          <h2 data-i18n="tech.trainingTitle">预训练 & 蒸馏</h2>
-          <p data-i18n="tech.trainingCopy">预训练阶段以视频基座为核心，蒸馏阶段压缩推理步数，并将双向 DiT 重构为自回归因果式 DiT。</p>
-        </div>
-        <figure class="wide-figure architecture-figure"><img src="moworld/architecture-training-distillation.png" alt="预训练与蒸馏" /></figure>
       </section>
 
       <section class="content-section architecture-section" id="实时推理">
         <div class="section-heading">
           <p class="eyebrow">Real-Time Inference</p>
           <h2 data-i18n="tech.inferenceTitle">实时推理</h2>
-          <p data-i18n="tech.inferenceCopy">面向 Ascend NPU 生态构建流水线层、并行层、算子层和底座基础设施，支撑低延迟实时视频流输出。</p>
+          <p data-i18n="tech.inferenceCopy">MoWorld 将实时推理问题分解为三个层级协同优化：流水线层、并行层与算子层，在资源受限场景实现显存高效利用，容纳庞大的模型参数、通信缓冲与推理状态；同时压缩端到端时延，将用户控制信号实时反映到生成帧中，并以流式方式持续输出。</p>
         </div>
         <figure class="wide-figure architecture-figure"><img src="moworld/architecture-realtime-inference.png" alt="实时推理" /></figure>
       </section>
 
-      <section class="content-section result-placeholder" id="展示结果">
+      <section class="content-section result-section" id="结果展示">
         <div class="section-heading">
           <p class="eyebrow">Results</p>
-          <h2 data-i18n="results.title">展示结果</h2>
-          <p data-i18n="results.copy">这一部分按参考页保留展示框架，具体视频、图片和路径后续补齐。</p>
+          <h2 data-i18n="results.title">结果展示</h2>
         </div>
-        <div class="tabs" aria-label="Result tabs">
-          <span class="active-tab" data-i18n="results.tab1">实时交互效果</span>
-          <span data-i18n="results.tab2">大场景生成</span>
-          <span data-i18n="results.tab3">室内重建</span>
+        <div class="result-tabs" aria-label="Result tabs">
+          <button type="button" class="active-tab" data-result-tab="generation" data-i18n="results.generationTab">世界生成效果</button>
+          <button type="button" data-result-tab="rebuild" data-i18n="results.rebuildTab">世界重建效果</button>
         </div>
-        <div class="empty-results">
-          <div data-i18n="results.empty1">主展示视频待补</div>
-          <div data-i18n="results.empty2">结果缩略图待补</div>
-          <div data-i18n="results.empty3">重建对比素材待补</div>
+        <div class="result-view active-result-view" data-result-view="generation">
+          <div class="result-main">
+            <video id="resultGenerationMainVideo" data-lazy-video loop muted playsinline preload="none" data-src="moworld/videos/0.mp4"></video>
+          </div>
+          <div class="result-thumbs" aria-label="World generation videos">
+            <button type="button" class="active-thumb" data-result-main="resultGenerationMainVideo" data-result-video="moworld/videos/0.mp4" aria-label="世界生成 1">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="moworld/videos/0.mp4"></video>
+            </button>
+            <button type="button" data-result-main="resultGenerationMainVideo" data-result-video="moworld/videos/1.mp4" aria-label="世界生成 2">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="moworld/videos/1.mp4"></video>
+            </button>
+            <button type="button" data-result-main="resultGenerationMainVideo" data-result-video="moworld/videos/2.mp4" aria-label="世界生成 3">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="moworld/videos/2.mp4"></video>
+            </button>
+            <button type="button" data-result-main="resultGenerationMainVideo" data-result-video="moworld/videos/3.mp4" aria-label="世界生成 4">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="moworld/videos/3.mp4"></video>
+            </button>
+            <button type="button" data-result-main="resultGenerationMainVideo" data-result-video="moworld/videos/4.mp4" aria-label="世界生成 5">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="moworld/videos/4.mp4"></video>
+            </button>
+            <button type="button" data-result-main="resultGenerationMainVideo" data-result-video="moworld/videos/5.mp4" aria-label="世界生成 6">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="moworld/videos/5.mp4"></video>
+            </button>
+          </div>
+        </div>
+        <div class="result-view panoramic-result-view" data-result-view="rebuild">
+          <div class="result-main">
+            <video id="resultRebuildMainVideo" data-lazy-video loop muted playsinline preload="none" data-src="3d_gs/1000f-01_gt_vs_render_10s_h264.mp4"></video>
+          </div>
+          <div class="result-thumbs" aria-label="World reconstruction videos">
+            <button type="button" class="active-thumb" data-result-main="resultRebuildMainVideo" data-result-video="3d_gs/1000f-01_gt_vs_render_10s_h264.mp4" aria-label="重建效果 1">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="3d_gs/1000f-01_gt_vs_render_10s_h264.mp4"></video>
+            </button>
+            <button type="button" data-result-main="resultRebuildMainVideo" data-result-video="3d_gs/1000f-02_gt_vs_render_10s_h264.mp4" aria-label="重建效果 2">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="3d_gs/1000f-02_gt_vs_render_10s_h264.mp4"></video>
+            </button>
+            <button type="button" data-result-main="resultRebuildMainVideo" data-result-video="3d_gs/video01_gt_vs_render_10s_h264.mp4" aria-label="重建效果 3">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="3d_gs/video01_gt_vs_render_10s_h264.mp4"></video>
+            </button>
+            <button type="button" data-result-main="resultRebuildMainVideo" data-result-video="3d_gs/bad_gt_vs_render_10s_h264.mp4" aria-label="重建效果 4">
+              <video data-lazy-video loop muted playsinline preload="none" data-src="3d_gs/bad_gt_vs_render_10s_h264.mp4"></video>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -227,162 +151,76 @@
           <article class="soft-card"><h3 data-i18n="applications.card1Title">室内场景重建</h3><p data-i18n="applications.card1Copy">使用 MoWorld 生成的视频进行室内场景重建，目标精细度高，重建稳定，空间一致性好。</p></article>
           <article class="soft-card"><h3 data-i18n="applications.card2Title">实时云游戏体验</h3><p data-i18n="applications.card2Copy">通过连续相机控制探索生成世界，支撑低延迟漫游、镜头控制和交互式内容体验。</p></article>
           <article class="soft-card"><h3 data-i18n="applications.card3Title">影视级镜头预演</h3><p data-i18n="applications.card3Copy">面向大场景、真实光照与导演级镜头，快速生成可用于分镜、预演和概念验证的视频世界。</p></article>
-          <article class="soft-card"><h3 data-i18n="applications.card4Title">国产化推理部署</h3><p data-i18n="applications.card4Copy">面向 Ascend 生态优化成本与吞吐，适合在国产化算力环境中进行规模化部署。</p></article>
         </div>
       </section>
 
       <footer class="site-footer">
         <strong>MoWorld</strong>
-        <span data-i18n="footer.copy">国产化实时交互世界模型展示页框架</span>
       </footer>
     </main>
     <script>
       const translations = {
         zh: {
-          "nav.overview": "模型简介",
-          "nav.capabilities": "能力展示",
           "nav.technology": "技术架构",
+          "nav.results": "结果展示",
           "nav.applications": "应用场景",
-          "hero.title": "MoWorld 实时交互世界模型",
-          "hero.copy": "首个自主可控（纯国产）的实时交互世界模型，从训练、推理到部署全流程基于国产化平台构建，面向昇腾生态实现高帧率、低成本、可连续控制的视频世界生成。",
-          "hero.github": "GitHub 待补",
-          "hero.paper": "Paper 待补",
-          "hero.demo": "Demo 待补",
-          "hero.cta": "立即体验 待补",
-          "metrics.fps": "并行优化后实时推理速度",
-          "metrics.latency": "按键响应约 1 秒",
-          "metrics.cost": "同等模型尺寸下的 GPU 推理成本占比",
-          "metrics.duration": "连续推理基本稳定",
-          "overview.title": "模型简介",
-          "overview.copy": "MoWorld 面向实时交互式视频世界模型构建，在同等 14B-MoE 模型尺寸下，通过 Ascend NPU 服务栈和并行推理优化，把推理成本降至 GPU 方案的约 20%-33%，同时把生成速度提升到 20-25 FPS。",
-          "overview.card1Title": "自主可控",
-          "overview.card1Copy": "训练、推理、部署全流程基于国产化平台，面向昇腾生态构建实时交互世界模型服务能力。",
-          "overview.card2Title": "实时交互",
-          "overview.card2Copy": "从 4-5 FPS 优化至 20-25 FPS，支持连续相机控制和低延迟交互反馈。",
-          "overview.card3Title": "成本可控",
-          "overview.card3Copy": "单机 910C 价格约为单机 H100、H20、A100 的 1/2 至 2/3，14B-MoE 推理成本显著降低。",
-          "overview.card4Title": "部署友好",
-          "overview.card4Copy": "围绕 Ascend 910C、CANN、PyTorch NPU、HCCL/HCCS 与 NPU 原生算子形成服务栈。",
-          "capabilities.title": "能力展示",
-          "capabilities.copy": "以下视频按亮点展示 MoWorld 在实时交互、空间稳定、镜头控制和多样化场景上的能力。",
-          "ability.1.title": "亮点一：实时响应",
-          "ability.1.copy": "按键响应仅为 1s 左右，且支持 2 分钟推理基本稳定。",
-          "ability.1.tag": "交互延迟",
-          "ability.2.title": "亮点二：支持大场景",
-          "ability.2.copy": "广阔外景生成稳定，广视角探索时空间结构不崩塌。",
-          "ability.2.tag": "空间稳定",
-          "ability.3.title": "亮点三：一致性高",
-          "ability.3.copy": "视角连续，镜头切换自然，适合导演级镜头调度。",
-          "ability.3.tag": "视角连续",
-          "ability.4.title": "亮点四：高清真实",
-          "ability.4.copy": "场景真实、高清，支持 1080P 或更高分辨率输出，具备影视级镜头效果。",
-          "ability.4.tag": "1080P+",
-          "ability.5.title": "亮点五：风格多样",
-          "ability.5.copy": "自然场景、二次元、游戏场景等类型均已完成支持。",
-          "ability.5.tag": "多风格",
-          "ability.6.title": "亮点六：人物稳定",
-          "ability.6.copy": "人物不飘移，建模稳定，人物细节保持更精细。",
-          "ability.6.tag": "人物建模",
-          "ability.7.title": "亮点七：镜头控制丝滑",
-          "ability.7.copy": "接近云游戏体验，支持导演级镜头与 3D 级别环绕控制。",
-          "ability.7.tag": "相机控制",
+          "hero.title": "MoWorld 高帧率实时交互世界模型",
+          "hero.copy": "首个面向NPU的实时交互世界模型，从训练、推理到部署全流程基于国产化平台构建，实现高帧率、低成本、可连续控制的视频世界生成。",
+          "hero.github": "代码(Coming Soon)",
+          "hero.paper": "报告",
+          "hero.cta": "立即体验(Coming Soon)",
           "tech.dataTitle": "数据引擎",
-          "tech.dataCopy": "多源视频经过数据采集、几何补全与数据质检、视觉语言模型标注和预计算缓存，形成训练就绪样本。",
-          "tech.trainingTitle": "预训练 & 蒸馏",
-          "tech.trainingCopy": "预训练阶段以视频基座为核心，蒸馏阶段压缩推理步数，并将双向 DiT 重构为自回归因果式 DiT。",
+          "tech.dataCopy": "MoWorld 的训练数据覆盖真实世界（室内、驾驶等）与虚拟世界（游戏、动漫、科幻电影等）多种场景，兼顾丰富性与泛化能力。同时，通过 3D 几何一致性、轨迹精度、多视图稳定性等多维质量筛选，以及几何补全、动态区域过滤和轨迹验证等关键流程，从海量数据中筛选出高质量训练资产，为 MoWorld 的低成本、高性能训练提供了坚实的数据基础。",
           "tech.inferenceTitle": "实时推理",
-          "tech.inferenceCopy": "面向 Ascend NPU 生态构建流水线层、并行层、算子层和底座基础设施，支撑低延迟实时视频流输出。",
-          "results.title": "展示结果",
-          "results.copy": "这一部分按参考页保留展示框架，具体视频、图片和路径后续补齐。",
-          "results.tab1": "实时交互效果",
-          "results.tab2": "大场景生成",
-          "results.tab3": "室内重建",
-          "results.empty1": "主展示视频待补",
-          "results.empty2": "结果缩略图待补",
-          "results.empty3": "重建对比素材待补",
+          "tech.inferenceCopy": "MoWorld 将实时推理问题分解为三个层级协同优化：流水线层、并行层与算子层，在资源受限场景实现显存高效利用，容纳庞大的模型参数、通信缓冲与推理状态；同时压缩端到端时延，将用户控制信号实时反映到生成帧中，并以流式方式持续输出。",
+          "results.title": "结果展示",
+          "results.generationTab": "世界生成效果",
+          "results.rebuildTab": "世界重建效果",
+          "results.thumbLargeScene": "大场景",
+          "results.thumbConsistency": "一致性",
+          "results.thumbCinematic": "影视级",
+          "results.thumbDiversity": "多样性",
+          "results.thumbCharacter": "人物",
+          "results.thumbCamera": "镜头控制",
+          "results.rebuildEmpty": "世界重建素材待补",
           "applications.title": "应用场景",
           "applications.card1Title": "室内场景重建",
           "applications.card1Copy": "使用 MoWorld 生成的视频进行室内场景重建，目标精细度高，重建稳定，空间一致性好。",
           "applications.card2Title": "实时云游戏体验",
           "applications.card2Copy": "通过连续相机控制探索生成世界，支撑低延迟漫游、镜头控制和交互式内容体验。",
           "applications.card3Title": "影视级镜头预演",
-          "applications.card3Copy": "面向大场景、真实光照与导演级镜头，快速生成可用于分镜、预演和概念验证的视频世界。",
-          "applications.card4Title": "国产化推理部署",
-          "applications.card4Copy": "面向 Ascend 生态优化成本与吞吐，适合在国产化算力环境中进行规模化部署。",
-          "footer.copy": "国产化实时交互世界模型展示页框架"
+          "applications.card3Copy": "面向大场景、真实光照与导演级镜头，快速生成可用于分镜、预演和概念验证的视频世界。"
         },
         en: {
-          "nav.overview": "Overview",
-          "nav.capabilities": "Capabilities",
           "nav.technology": "Technology",
+          "nav.results": "Results",
           "nav.applications": "Applications",
-          "hero.title": "MoWorld Real-Time Interactive World Model",
-          "hero.copy": "A fully self-controlled real-time interactive world model built on a domestic training, inference, and deployment stack for the Ascend ecosystem, enabling high-FPS, low-cost, continuously controllable video world generation.",
-          "hero.github": "GitHub TBD",
-          "hero.paper": "Paper TBD",
-          "hero.demo": "Demo TBD",
-          "hero.cta": "Try Demo TBD",
-          "metrics.fps": "Real-time inference after parallel optimization",
-          "metrics.latency": "About 1 second key response",
-          "metrics.cost": "GPU inference cost ratio at the same model size",
-          "metrics.duration": "Stable continuous inference",
-          "overview.title": "Model Overview",
-          "overview.copy": "MoWorld is built for real-time interactive video world modeling. At the same 14B-MoE model size, its Ascend NPU serving stack and parallel inference optimizations reduce inference cost to about 20%-33% of GPU solutions while increasing generation speed to 20-25 FPS.",
-          "overview.card1Title": "Self-Controlled Stack",
-          "overview.card1Copy": "Training, inference, and deployment are built on a domestic platform, forming real-time interactive world-model serving capability for the Ascend ecosystem.",
-          "overview.card2Title": "Real-Time Interaction",
-          "overview.card2Copy": "Optimized from 4-5 FPS to 20-25 FPS, with continuous camera control and low-latency interactive feedback.",
-          "overview.card3Title": "Lower Cost",
-          "overview.card3Copy": "A single 910C machine costs about 1/2 to 2/3 of H100, H20, or A100 machines, with significantly lower 14B-MoE inference cost.",
-          "overview.card4Title": "Deployment Ready",
-          "overview.card4Copy": "The serving stack is built around Ascend 910C, CANN, PyTorch NPU, HCCL/HCCS, and native NPU operators.",
-          "capabilities.title": "Capability Showcase",
-          "capabilities.copy": "The following videos demonstrate MoWorld across real-time interaction, spatial stability, camera control, and diverse scene generation.",
-          "ability.1.title": "Highlight 1: Real-Time Response",
-          "ability.1.copy": "Key response is around 1 second, with stable inference for about 2 minutes.",
-          "ability.1.tag": "Interaction Latency",
-          "ability.2.title": "Highlight 2: Large-Scale Scenes",
-          "ability.2.copy": "Stable outdoor generation with broad-view exploration and robust spatial structure.",
-          "ability.2.tag": "Spatial Stability",
-          "ability.3.title": "Highlight 3: High Consistency",
-          "ability.3.copy": "Continuous viewpoints and natural camera transitions for director-level shots.",
-          "ability.3.tag": "View Consistency",
-          "ability.4.title": "Highlight 4: HD Realism",
-          "ability.4.copy": "Realistic, high-definition scenes with 1080P or higher output and cinematic camera effects.",
-          "ability.4.tag": "1080P+",
-          "ability.5.title": "Highlight 5: Diverse Styles",
-          "ability.5.copy": "Natural environments, anime-style scenes, game scenes, and other styles are supported.",
-          "ability.5.tag": "Multi-Style",
-          "ability.6.title": "Highlight 6: Stable Characters",
-          "ability.6.copy": "Characters remain stable without drifting, with reliable modeling and refined detail.",
-          "ability.6.tag": "Character Modeling",
-          "ability.7.title": "Highlight 7: Smooth Camera Control",
-          "ability.7.copy": "A cloud-gaming-like control feel with director-level camera movement and 3D orbiting.",
-          "ability.7.tag": "Camera Control",
+          "hero.title": "MoWorld High-Frame-Rate Real-Time Interactive World Model",
+          "hero.copy": "The first NPU-oriented real-time interactive world model, built on a domestic platform across training, inference, and deployment, enabling high-FPS, low-cost, continuously controllable video world generation.",
+          "hero.github": "Code (Coming Soon)",
+          "hero.paper": "Paper",
+          "hero.cta": "Try Demo (Coming Soon)",
           "tech.dataTitle": "Data Engine",
-          "tech.dataCopy": "Multi-source videos pass through data collection, geometry completion, quality checks, visual-language labeling, and precomputed caching to form training-ready samples.",
-          "tech.trainingTitle": "Pretraining & Distillation",
-          "tech.trainingCopy": "Pretraining uses the video backbone as the core, while distillation compresses inference steps and rebuilds bidirectional DiT into an autoregressive causal DiT.",
+          "tech.dataCopy": "MoWorld's training data covers diverse real-world scenarios, such as indoor scenes and driving, as well as virtual-world scenarios including games, animation, and science-fiction films, balancing diversity with generalization. Through multi-dimensional quality filtering based on 3D geometric consistency, trajectory accuracy, and multi-view stability, together with key procedures such as geometry completion, dynamic-region filtering, and trajectory verification, high-quality training assets are selected from massive data, providing a solid data foundation for MoWorld's low-cost, high-performance training.",
           "tech.inferenceTitle": "Real-Time Inference",
-          "tech.inferenceCopy": "The Ascend NPU stack organizes the pipeline, parallel layer, operator layer, and base infrastructure to support low-latency real-time video streaming.",
+          "tech.inferenceCopy": "MoWorld decomposes real-time inference into three jointly optimized levels: the pipeline layer, parallel layer, and operator layer. In resource-constrained settings, this enables efficient memory use while accommodating massive model parameters, communication buffers, and inference states; it also reduces end-to-end latency, reflects user control signals in generated frames in real time, and continuously outputs results in a streaming manner.",
           "results.title": "Results",
-          "results.copy": "This section keeps the reference-page display framework. Specific videos, images, and paths can be filled in later.",
-          "results.tab1": "Real-Time Interaction",
-          "results.tab2": "Large-Scene Generation",
-          "results.tab3": "Indoor Reconstruction",
-          "results.empty1": "Main showcase video TBD",
-          "results.empty2": "Result thumbnails TBD",
-          "results.empty3": "Reconstruction comparisons TBD",
+          "results.generationTab": "World Generation",
+          "results.rebuildTab": "World Reconstruction",
+          "results.thumbLargeScene": "Large Scene",
+          "results.thumbConsistency": "Consistency",
+          "results.thumbCinematic": "Cinematic",
+          "results.thumbDiversity": "Diversity",
+          "results.thumbCharacter": "Characters",
+          "results.thumbCamera": "Camera Control",
+          "results.rebuildEmpty": "World reconstruction media TBD",
           "applications.title": "Applications",
           "applications.card1Title": "Indoor Scene Reconstruction",
           "applications.card1Copy": "Videos generated by MoWorld can support indoor scene reconstruction with high target detail, stable reconstruction, and strong spatial consistency.",
           "applications.card2Title": "Real-Time Cloud Gaming Experience",
           "applications.card2Copy": "Continuous camera control enables exploration of generated worlds, supporting low-latency roaming, camera control, and interactive content experiences.",
           "applications.card3Title": "Cinematic Shot Previsualization",
-          "applications.card3Copy": "Large scenes, realistic lighting, and director-level camera control enable fast video worlds for storyboards, previz, and concept validation.",
-          "applications.card4Title": "Domestic Inference Deployment",
-          "applications.card4Copy": "Optimized for cost and throughput in the Ascend ecosystem, suitable for large-scale deployment in domestic compute environments.",
-          "footer.copy": "Domestic real-time interactive world model showcase framework"
+          "applications.card3Copy": "Large scenes, realistic lighting, and director-level camera control enable fast video worlds for storyboards, previz, and concept validation."
         }
       };
 
@@ -390,6 +228,88 @@
       const languageToggle = document.getElementById("languageToggle");
       const currentLanguage = document.querySelector("[data-current-language]");
       const languageOptions = document.querySelectorAll("[data-language-option]");
+      const resultTabs = document.querySelectorAll("[data-result-tab]");
+      const resultViews = document.querySelectorAll("[data-result-view]");
+      const resultThumbs = document.querySelectorAll("[data-result-video]");
+      const lazyVideos = document.querySelectorAll("video[data-lazy-video]");
+      const promoVideo = document.querySelector("[data-click-video]");
+      const promoPlayButton = document.querySelector("[data-promo-play]");
+
+      function playPromoVideo() {
+        if (!promoVideo) return;
+        promoVideo.muted = false;
+        promoVideo.controls = true;
+        const playRequest = promoVideo.play();
+        if (playRequest) {
+          playRequest.catch(() => {});
+        }
+      }
+
+      if (promoVideo && promoPlayButton) {
+        promoPlayButton.addEventListener("click", playPromoVideo);
+        promoVideo.addEventListener("play", () => promoPlayButton.classList.add("hidden"));
+        promoVideo.addEventListener("pause", () => promoPlayButton.classList.remove("hidden"));
+        promoVideo.addEventListener("ended", () => promoPlayButton.classList.remove("hidden"));
+      }
+
+      function videoCanPlay(video) {
+        const rect = video.getBoundingClientRect();
+        return (
+          video.getClientRects().length > 0 &&
+          rect.bottom > 0 &&
+          rect.top < window.innerHeight &&
+          rect.right > 0 &&
+          rect.left < window.innerWidth
+        );
+      }
+
+      function loadAndPlay(video) {
+        const source = video.dataset.src;
+        if (!source) return;
+        if (video.getAttribute("src") !== source) {
+          video.setAttribute("src", source);
+          video.load();
+        }
+        const playRequest = video.play();
+        if (playRequest) {
+          playRequest.catch(() => {});
+        }
+      }
+
+      function pauseVideos(root = document) {
+        root.querySelectorAll("video[data-lazy-video]").forEach((video) => {
+          video.pause();
+        });
+      }
+
+      function refreshLazyVideos(root = document) {
+        root.querySelectorAll("video[data-lazy-video]").forEach((video) => {
+          if (videoCanPlay(video)) {
+            loadAndPlay(video);
+          } else {
+            video.pause();
+          }
+        });
+      }
+
+      if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const video = entry.target;
+              if (entry.isIntersecting && videoCanPlay(video)) {
+                loadAndPlay(video);
+              } else {
+                video.pause();
+              }
+            });
+          },
+          { rootMargin: "0px", threshold: 0.15 }
+        );
+        lazyVideos.forEach((video) => videoObserver.observe(video));
+      } else {
+        refreshLazyVideos();
+      }
 
       function setLanguage(language) {
         document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
@@ -420,12 +340,59 @@
         });
       });
 
+      resultTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.resultTab;
+          resultTabs.forEach((item) => {
+            item.classList.toggle("active-tab", item === tab);
+          });
+          resultViews.forEach((view) => {
+            const isActiveView = view.dataset.resultView === target;
+            view.classList.toggle("active-result-view", isActiveView);
+            if (!isActiveView) {
+              pauseVideos(view);
+            }
+          });
+          requestAnimationFrame(() => {
+            const activeView = document.querySelector(`[data-result-view="${target}"]`);
+            if (activeView) {
+              refreshLazyVideos(activeView);
+            }
+          });
+        });
+      });
+
+      resultThumbs.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+          const source = thumb.dataset.resultVideo;
+          const mainVideo = document.getElementById(thumb.dataset.resultMain);
+          if (!source || !mainVideo) return;
+          if (mainVideo.dataset.src !== source) {
+            mainVideo.dataset.src = source;
+            mainVideo.pause();
+            mainVideo.removeAttribute("src");
+            mainVideo.load();
+          }
+          if (videoCanPlay(mainVideo)) {
+            loadAndPlay(mainVideo);
+          }
+          document
+            .querySelectorAll(`[data-result-main="${thumb.dataset.resultMain}"]`)
+            .forEach((item) => {
+            item.classList.toggle("active-thumb", item === thumb);
+          });
+        });
+      });
+
       document.addEventListener("click", () => {
         languageSwitch.classList.remove("open");
         languageToggle.setAttribute("aria-expanded", "false");
       });
 
       setLanguage("zh");
+      requestAnimationFrame(() => {
+        refreshLazyVideos();
+      });
     </script>
   </body>
 </html>
